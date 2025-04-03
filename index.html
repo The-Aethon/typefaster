@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeFaster</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-3xl flex flex-col items-center">
+
+        <div id="mode-selector" class="flex space-x-2 mb-6">
+            <button class="mode-button" data-mode="random" data-words="40">Words</button>
+            <button class="mode-button" data-mode="short" data-words="20">Short</button>
+            <button class="mode-button" data-mode="long" data-words="80">Long</button>
+            <button class="mode-button" data-mode="quote">Quote</button>
+        </div>
+
+        <div id="stats-container" class="flex space-x-8 mb-8 text-2xl font-semibold opacity-0">
+            <div id="timer">0s</div>
+            <div id="wpm">0 WPM</div>
+            <div id="accuracy">100%</div>
+        </div>
+
+        <div id="typing-area" class="relative w-full mb-8 cursor-text border-2 border-transparent rounded-lg transition-colors duration-200" onclick="document.getElementById('text-input').focus()">
+            <input type="text" id="text-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
+            <div id="caret"></div>
+
+            <div id="words-container" class="text-gray-500 p-2"> Loading...
+            </div>
+             <div id="focus-hint" class="absolute inset-0 flex items-center justify-center text-gray-500 text-lg font-medium hidden bg-gray-800 bg-opacity-50 rounded-lg">
+                Click or start typing to focus
+            </div>
+        </div>
+
+        <button id="reset-button" title="Reset Test (Ctrl+Backspace)" class="p-3 bg-gray-700 hover:bg-yellow-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
+             <i data-lucide="refresh-cw" class="w-6 h-6"></i> </button>
+
+        <div id="result-popup" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-50">
+            <div class="bg-gray-800 p-8 rounded-lg shadow-xl text-center max-w-md w-full">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">Test Complete!</h2>
+                <div class="text-xl space-y-3 mb-6">
+                    <p>Mode: <span id="result-mode" class="font-semibold text-white">Words</span></p>
+                    <p>WPM: <span id="result-wpm" class="font-semibold text-white">0</span></p>
+                    <p>Accuracy: <span id="result-accuracy" class="font-semibold text-white">0%</span></p>
+                    <p>Time: <span id="result-time" class="font-semibold text-white">0s</span></p>
+                    <p>Characters: <span id="result-chars" class="font-semibold text-white">0/0/0</span></p>
+                </div>
+                <button id="restart-button" class="px-6 py-3 bg-yellow-500 text-gray-900 font-semibold hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+                    Next Test
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
