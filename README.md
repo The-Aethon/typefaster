@@ -2,8 +2,8 @@
 
 TypeFaster is a web-based typing test application inspired by minimalist typing sites like Monkeytype. It helps users practice their typing speed and accuracy with a clean interface and dynamic feedback.
 
-![Screenshot Placeholder](https://placehold.co/600x400/2c2e31/d1d0c5?text=TypeFaster+Screenshot)
-*(Add a screenshot of your application here!)*
+![Screenshot Placeholder](screen.png)
+*(Not my best)*
 
 ## Features ✨
 
